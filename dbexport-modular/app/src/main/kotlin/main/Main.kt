@@ -1,8 +1,9 @@
-package org.example
+package main
 
 import DBExporter
 import java.sql.DriverManager
 import java.util.ServiceLoader
+
 
 fun main() {
     val jdbcUrl = "jdbc:mysql://localhost:3306/skdemo?autoReconnect=true&useSSL=false";
@@ -23,6 +24,7 @@ fun main() {
 
     val serviceLoader = ServiceLoader.load(DBExporter::class.java)
 
+
     val exporterServices = mutableMapOf<String,DBExporter> ()
 
     serviceLoader.forEach{
@@ -31,5 +33,5 @@ fun main() {
 
     println(exporterServices.keys)
 
-    exporterServices.get("CSV")!!.save(rs,true)
+    //exporterServices.get("PDF")!!.save(rs,true)
 }

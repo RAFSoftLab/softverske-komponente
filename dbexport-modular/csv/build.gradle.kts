@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm")
     `java-library`
+
 }
 
 group = "org.example"
@@ -19,5 +20,5 @@ tasks.test {
     useJUnitPlatform()
 }
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(17)
 }
